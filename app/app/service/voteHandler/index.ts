@@ -63,6 +63,9 @@ class VoteHandler {
     try {
       this.contractWrite = new this.walletHandler.eth.Contract(abi, address);
       this.contractRead = new this.wsHandler.eth.Contract(abi, address);
+      //add by milochen
+      console.log(this.contractWrite);
+
       this.updateContractData();
       this.subscribeData();
     } catch(e) {
@@ -173,6 +176,7 @@ class VoteHandler {
     this.initDone = true;
 
     // setTimeout(() => this.contractInit('0x623718b15295934386bd7569f42027b911751861'), 500);
+    setTimeout(() => this.contractInit('0x34F5C478e1D8350544144910e8Af586c47AF8B5B'), 500);
   }
 
   private getNetworkId = () => this.walletHandler.eth.net.getId();
